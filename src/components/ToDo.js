@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 class ToDo extends Component {
   render() {
     return (
-      <li>Todo list goes here !?</li>
-    );
+      <li>To Do list goes here!</li>
+          );
   }
 }
 
