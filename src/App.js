@@ -9,7 +9,7 @@ class App extends Component {
       todos: [
         {description: 'Walk the cat!', isCompleted: true },
         {description: 'Throw dishes away!!', isCompleted: false },
-        {description: 'Buy new dishes!!!', isCompleted: false }
+        {description: 'Buy new dishes!!!', isCompleted: true }
       ]
     };
   }

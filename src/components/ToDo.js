@@ -4,8 +4,12 @@ class ToDo extends Component {
   render() {
     return (
   //    <li>To Do list goes here!</li>
-      <li>{this.props.description}</li>
-          );
+  //    <li>{this.props.description}</li>
+      <li>
+        <input type="checkbox" checked={ this.props.isCompleted } />
+        <span>{this.props.description }</span>
+      </li>
+  );
   }
 }
 
