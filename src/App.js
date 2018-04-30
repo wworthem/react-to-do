@@ -38,7 +38,7 @@ deleteToDo(index) {
 
   this.setState({ todos: newTodos});
   console.log('!!deleteToDo executed!!');
-  //this.props.ToDo(this.props.deleteToDo);
+  //this.props.todo(this.props.deleteToDo);
 
 }
   render() {
