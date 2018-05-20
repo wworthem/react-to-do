@@ -13,6 +13,8 @@ class App extends Component {
       ],
       newTodoDescription: ''
     };
+    /* added line below 5/20/18... */
+    // this.deleteToDo = this.deleteToDo.bind(this);
   }
 
   handleChange(e) {
@@ -33,20 +35,31 @@ class App extends Component {
   }
 
 deleteToDo(index) {
-  const { todos } = this.state;
+  /*
+  const todos = this.state.todos.splice(index, 1);
+  this.setState({todos: todos});
+  */
+
+  const {todos} = this.state;
   const newTodos = todos.filter(todo => todo.index !== index);
-
   this.setState({ todos: newTodos});
-  console.log('!!deleteToDo executed!!');
-  //this.props.todo(this.props.deleteToDo);
 
+  console.log('!!deleteToDo executed!!');
+  console.log('index =  '+index);
 }
+
   render() {
     return (
       <div className="App">
         <ul>
           { this.state.todos.map((todo, index)=>
-            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ ()=>this.toggleComplete(index)}  deleteToDo={ ()=>this.deleteToDo(index) }/>
+            <ToDo key={ index }
+            description={ todo.description }
+            isCompleted={ todo.isCompleted }
+            toggleComplete={ ()=>this.toggleComplete(index)}
+            deleteToDo={ ()=>this.deleteToDo(index) }
+
+            />
           )}
         </ul>
 
