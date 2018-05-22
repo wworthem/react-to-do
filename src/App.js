@@ -35,17 +35,21 @@ class App extends Component {
   }
 
 deleteToDo(index) {
-  /*
-  const todos = this.state.todos.splice(index, 1);
-  this.setState({todos: todos});
-  */
 
-  const {todos} = this.state;
+  console.log(this.state.todos);
+
+  //const {todos} = this.state;
+  const todos = this.state.todos.slice();
+  const todo = todos[index];
+
+  console.log('todosIndex = '+todo.index);
+
   const newTodos = todos.filter(todo => todo.index !== index);
   this.setState({ todos: newTodos});
 
   console.log('!!deleteToDo executed!!');
   console.log('index =  '+index);
+  console.log(this.state.todos);
 }
 
   render() {
