@@ -38,18 +38,16 @@ deleteToDo(index) {
 
   console.log(this.state.todos);
 
-  //const {todos} = this.state;
   const todos = this.state.todos.slice();
-  const todo = todos[index];
+  //const todo = todos[index];
 
-  console.log('todosIndex = '+todo.index);
+  const newTodos = todos.filter( (todo, todoIndex) => todoIndex !== index);
 
-  const newTodos = todos.filter(todo => todo.index !== index);
   this.setState({ todos: newTodos});
 
   console.log('!!deleteToDo executed!!');
   console.log('index =  '+index);
-  console.log(this.state.todos);
+  console.log("this.state.todos  "+this.state.todos);
 }
 
   render() {
